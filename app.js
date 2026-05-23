@@ -312,6 +312,19 @@ function productText(product) {
   return product[lang];
 }
 
+function imagePath(product, mode = "whole") {
+  return `assets/products/${product.id}${mode === "cut" ? "-cut" : ""}.jpg`;
+}
+
+function productImage(product, mode = "whole", label = "") {
+  const img = document.createElement("img");
+  img.className = "bagel-photo";
+  img.src = imagePath(product, mode);
+  img.alt = label || `${productText(product).name} ${mode === "cut" ? t("cutView") : t("topView")}`;
+  img.loading = "lazy";
+  return img;
+}
+
 function drawBagel(canvas, product, mode = "whole") {
   const ctx = canvas.getContext("2d");
   const { width: w, height: h } = canvas;
@@ -475,9 +488,7 @@ function shade(hex, amount) {
 }
 
 function art(product, mode) {
-  const node = document.querySelector("#bagelArtTemplate").content.firstElementChild.cloneNode(true);
-  requestAnimationFrame(() => drawBagel(node, product, mode));
-  return node;
+  return productImage(product, mode);
 }
 
 function renderMenu() {

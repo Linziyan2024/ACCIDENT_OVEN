@@ -359,10 +359,11 @@ input {
   background: #f5e5c5;
 }
 
-.bagel-art {
+.bagel-photo {
   width: 100%;
   aspect-ratio: 1.28;
   display: block;
+  object-fit: cover;
 }
 
 .card-body,
@@ -412,8 +413,9 @@ input {
   align-items: center;
 }
 
-.shop-top .bagel-art {
+.shop-top .bagel-photo {
   width: 88px;
+  height: 70px;
   border-radius: 8px;
   border: 1px solid var(--line);
 }
@@ -465,8 +467,9 @@ input {
   align-items: center;
 }
 
-.cart-item .bagel-art {
+.cart-item .bagel-photo {
   width: 76px;
+  height: 60px;
   border-radius: 8px;
 }
 
