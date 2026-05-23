@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="zh-Hant">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>ACCDENT OVEN | Bagel Shop</title>
+    <meta
+      name="description"
+      content="ACCDENT OVEN bilingual bagel shop with menu, build-a-box ordering, cart, account sign-up, search, and FAQ."
+    />
+    <link rel="preload" href="assets/bagel-template.jpg" as="image" />
+    <link rel="preload" href="assets/accdent-oven-logo.jpg" as="image" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="top-strip" data-i18n="topStrip">新鮮出爐貝果｜滿 12 入可自選口味｜本週冷凍宅配免運</div>
+
+    <header class="site-header">
+      <a class="brand" href="#home" aria-label="ACCDENT OVEN home">
+        <img src="assets/accdent-oven-logo.jpg" alt="ACCDENT OVEN logo" />
+        <span>ACCDENT OVEN</span>
+      </a>
+
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="#home" data-i18n="navHome">主頁</a>
+        <a href="#menu" data-i18n="navMenu">菜單</a>
+        <a href="#shop" data-i18n="navShop">購物頁面</a>
+        <a href="#cart" data-i18n="navCart">購物車</a>
+        <a href="#faq" data-i18n="navFaq">常見問題</a>
+      </nav>
+
+      <div class="header-actions">
+        <label class="search-box">
+          <span class="sr-only" data-i18n="searchLabel">搜尋網站</span>
+          <input id="siteSearch" type="search" placeholder="搜尋口味、保存、加熱..." />
+        </label>
+        <button class="ghost-btn" id="langToggle" type="button">EN</button>
+        <button class="solid-btn" id="accountOpen" type="button" data-i18n="accountCta">新帳戶</button>
+        <a class="cart-pill" href="#cart" aria-label="Cart">
+          <span data-i18n="cartShort">購物車</span>
+          <strong id="cartCount">0</strong>
+        </a>
+      </div>
+    </header>
+
+    <main>
+      <section id="home" class="hero search-scope" data-search="店面 外觀 貝果 新鮮 ACCDENT OVEN bakery storefront bagel">
+        <div class="storefront" aria-hidden="true">
+          <div class="awning"></div>
+          <div class="window left-window">
+            <span></span><span></span><span></span>
+          </div>
+          <div class="door">
+            <img src="assets/accdent-oven-logo.jpg" alt="" />
+          </div>
+          <div class="window right-window">
+            <span></span><span></span><span></span>
+          </div>
+        </div>
+        <div class="hero-copy">
+          <p class="kicker" data-i18n="heroKicker">台灣烘焙室 · 手感貝果 · 每日小批量</p>
+          <h1 data-i18n="heroTitle">ACCDENT OVEN</h1>
+          <p data-i18n="heroText">
+            參考紐約貝果店的自選盒購物體驗，做成更溫暖的街角烘焙網站：從原味、芝麻到包餡甜鹹口味，都能直接加入購物車。
+          </p>
+          <div class="hero-actions">
+            <a class="solid-btn large" href="#shop" data-i18n="heroShop">開始選貝果</a>
+            <a class="ghost-btn large" href="#menu" data-i18n="heroMenu">查看菜單</a>
+          </div>
+        </div>
+      </section>
+
+      <section class="band intro-band search-scope" data-search="boiled baked fresh chewy crust soft inside">
+        <div>
+          <p class="kicker" data-i18n="freshKicker">Boiled, then baked</p>
+          <h2 data-i18n="freshTitle">外皮微韌、內裡鬆軟，剛好適合每天早晨。</h2>
+        </div>
+        <p data-i18n="freshText">
+          菜單和購物頁分開：菜單適合瀏覽口味與切面，購物頁則可以快速選數量、加入購物車、計算小計。
+        </p>
+      </section>
+
+      <section id="menu" class="section search-scope" data-search="菜單 口味 圖片 切面 bagel menu flavor cross section">
+        <div class="section-heading">
+          <p class="kicker" data-i18n="menuKicker">Menu</p>
+          <h2 data-i18n="menuTitle">貝果菜單</h2>
+          <p data-i18n="menuText">每個口味都有同角度商品圖與切面圖，方便客戶比較口味和餡料。</p>
+        </div>
+        <div class="filter-row" role="tablist" aria-label="Bagel filters">
+          <button class="filter active" type="button" data-filter="all" data-i18n="filterAll">全部</button>
+          <button class="filter" type="button" data-filter="classic" data-i18n="filterClassic">無包餡</button>
+          <button class="filter" type="button" data-filter="filled" data-i18n="filterFilled">包餡</button>
+        </div>
+        <div id="menuGrid" class="menu-grid"></div>
+      </section>
+
+      <section id="shop" class="section shop-section search-scope" data-search="購物 加入購物車 數量 box order shopping cart checkout">
+        <div class="section-heading">
+          <p class="kicker" data-i18n="shopKicker">Build your box</p>
+          <h2 data-i18n="shopTitle">購物頁面</h2>
+          <p data-i18n="shopText">每種貝果都能單獨選數量加入購物車，之後可在購物車調整。</p>
+        </div>
+        <div id="shopGrid" class="shop-grid"></div>
+      </section>
+
+      <section id="cart" class="section cart-section search-scope" data-search="購物車 checkout total subtotal order">
+        <div class="section-heading">
+          <p class="kicker" data-i18n="cartKicker">Cart</p>
+          <h2 data-i18n="cartTitle">購物車</h2>
+        </div>
+        <div class="cart-layout">
+          <div id="cartItems" class="cart-items"></div>
+          <aside class="cart-summary">
+            <h3 data-i18n="summaryTitle">訂單摘要</h3>
+            <div class="summary-line">
+              <span data-i18n="summaryItems">商品數量</span>
+              <strong id="summaryQty">0</strong>
+            </div>
+            <div class="summary-line">
+              <span data-i18n="summarySubtotal">小計</span>
+              <strong id="summarySubtotal">NT$0</strong>
+            </div>
+            <button class="solid-btn wide" type="button" id="checkoutBtn" data-i18n="checkout">送出預訂</button>
+            <p class="tiny" data-i18n="checkoutNote">示範網站不會真的付款，送出後會顯示訂單資訊。</p>
+          </aside>
+        </div>
+      </section>
+
+      <section id="faq" class="section faq-section search-scope" data-search="FAQ 常見問題 保存時間 加熱方式 保存期限 freezer reheating shelf life">
+        <div class="section-heading">
+          <p class="kicker" data-i18n="faqKicker">FAQ</p>
+          <h2 data-i18n="faqTitle">常見問題</h2>
+        </div>
+        <div id="faqList" class="faq-list"></div>
+      </section>
+    </main>
+
+    <dialog id="accountDialog" class="account-dialog">
+      <form method="dialog" class="account-form">
+        <button class="dialog-close" value="cancel" aria-label="Close">×</button>
+        <img src="assets/accdent-oven-logo.jpg" alt="ACCDENT OVEN logo" />
+        <h2 data-i18n="accountTitle">建立新帳戶</h2>
+        <p data-i18n="accountText">帳號可使用 Email 或手機號碼，方便查詢預訂與宅配資訊。</p>
+        <label>
+          <span data-i18n="accountId">Email 或手機號碼</span>
+          <input id="accountId" type="text" inputmode="email" required placeholder="name@example.com / 0912345678" />
+        </label>
+        <label>
+          <span data-i18n="accountName">姓名</span>
+          <input id="accountName" type="text" required />
+        </label>
+        <button class="solid-btn wide" value="default" data-i18n="accountSubmit">建立帳戶</button>
+      </form>
+    </dialog>
+
+    <template id="bagelArtTemplate">
+      <canvas class="bagel-art" width="720" height="560" aria-hidden="true"></canvas>
+    </template>
+
+    <img id="sourceBagel" src="assets/bagel-template.jpg" alt="" hidden />
+    <script src="app.js"></script>
+  </body>
+</html>
